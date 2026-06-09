@@ -1,41 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .card{
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .card img{
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .total{
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .empty{
+            font-size: 22px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<h1>Your Cart</h1>
+    <h1>🛒 Your Cart</h1>
 
-<div id="cart-items"></div>
+    <p>
+        <a href="index.html">← Continue Shopping</a>
+    </p>
 
-<script src="js/cart.js"></script>
+    <div id="cart-items"></div>
+
+    <script>
+
+        let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+        const container =
+        document.getElementById("cart-items");
+
+        let total = 0;
+
+        if(cart.length === 0){
+
+            container.innerHTML =
+            '<p class="empty">Your cart is empty.</p>';
+
+        }else{
+
+            cart.forEach(product => {
+
+                total += Number(product.price);
+
+                container.innerHTML += `
+
+                <div class="card">
+
+                    <img src="${product.image}" alt="${product.name}">
+
+                    <div>
+
+                        <h3>${product.name}</h3>
+
+                        <p>Category: ${product.category}</p>
+
+                        <p>Price: ₹${product.price}</p>
+
+                    </div>
+
+                </div>
+
+                `;
+
+            });
+
+            container.innerHTML += `
+
+            <div class="total">
+                Total Amount: ₹${total}
+            </div>
+
+            `;
+
+        }
+
+    </script>
 
 </body>
+
 </html>
-
-<script>
-
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-console.log(cart);
-
-const container =
-document.getElementById("cart-items");
-
-let total = 0;
-
-cart.forEach(product => {
-
-    total += Number(product.price);
-
-});
-
-console.log("Total =", total);
-
-container.innerHTML += `
-<h2>Total: ₹${total}</h2>
-`;
-
-</script>
