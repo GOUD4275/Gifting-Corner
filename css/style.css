@@ -274,6 +274,10 @@ header{
     color:#9c7630 !important;
 }
 
-.dark-text{
+
+.italic-text{
     color:#4a3520 !important;
+    display:inline-block;
+    transform: skew(-8deg);
 }
+
