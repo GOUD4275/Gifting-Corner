@@ -271,9 +271,9 @@ header{
 }
 
 .gold-text{
-    color: #9c7630;
+    color:#9c7630 !important;
 }
 
 .dark-text{
-    color: #6b4f2a;
+    color:#4a3520 !important;
 }
