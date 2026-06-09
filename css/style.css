@@ -128,9 +128,10 @@ gap:15px;
 }
 
 .logo img{
-width:80px;
-height:80px;
-border-radius:50%;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:3px solid var(--gold);
 }
 
 .logo h1{
@@ -141,4 +142,59 @@ margin:0;
 .logo p{
 font-size:14px;
 color:#666;
+}
+
+
+body{
+  background: var(--cream);
+  color: var(--black);
+}
+
+header{
+  background: white;
+  border-bottom: 2px solid var(--gold);
+}
+
+.logo h1{
+  color: var(--black);
+}
+
+.hero{
+  background: linear-gradient(
+      rgba(248,243,235,.9),
+      rgba(248,243,235,.9)
+  );
+}
+
+.hero h2{
+  color: var(--dark-gold);
+  font-size: 3.5rem;
+}
+
+.filters button{
+  background: var(--gold);
+  color: white;
+}
+
+.filters button:hover{
+  background: var(--dark-gold);
+}
+
+.card{
+  background: white;
+  border: 1px solid #eadbc3;
+}
+
+.price{
+  color: var(--gold);
+}
+
+.shop-btn{
+  display:inline-block;
+  margin-top:20px;
+  background:#b8893f;
+  color:white;
+  padding:14px 30px;
+  border-radius:30px;
+  text-decoration:none;
 }
