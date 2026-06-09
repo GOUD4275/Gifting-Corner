@@ -13,3 +13,29 @@
 
 </body>
 </html>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+console.log(cart);
+
+const container =
+document.getElementById("cart-items");
+
+let total = 0;
+
+cart.forEach(product => {
+
+    total += Number(product.price);
+
+});
+
+console.log("Total =", total);
+
+container.innerHTML += `
+<h2>Total: ₹${total}</h2>
+`;
+
+</script>
