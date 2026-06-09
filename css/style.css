@@ -306,3 +306,23 @@ header{
     0 4px 10px rgba(0,0,0,0.15);
 
 }
+
+nav a{
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    color:#222;
+
+    font-weight:600;
+
+}
+
+nav a i{
+
+    margin-right:6px;
+
+    color:#9c7630;
+
+}
