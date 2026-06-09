@@ -282,3 +282,27 @@ header{
     font-weight: 600 !important;
 }
 
+.shop-btn{
+
+    display:inline-block;
+
+    background:linear-gradient(
+    135deg,
+    #c79a4b,
+    #9c7630
+    );
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.15);
+
+}
