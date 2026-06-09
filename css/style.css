@@ -270,14 +270,14 @@ header{
     }
 }
 
+
+
 .gold-text{
     color:#9c7630 !important;
 }
 
 .italic-text{
-    color:#4a3520 !important;
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: 1px;
+    color:red !important;
+    font-style: italic !important;
 }
 
