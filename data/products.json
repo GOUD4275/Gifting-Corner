@@ -1,0 +1,37 @@
+[
+{
+"id":1,
+"name":"Luxury Watch Box",
+"category":"For Him",
+"price":799,
+"image":"images/products/001.jpg"
+},
+{
+"id":2,
+"name":"Spa Gift Hamper",
+"category":"For Her",
+"price":999,
+"image":"images/products/002.jpg"
+},
+{
+"id":3,
+"name":"Birthday Gift Combo",
+"category":"Birthday",
+"price":599,
+"image":"images/products/003.jpg"
+},
+{
+"id":4,
+"name":"Anniversary Rose Box",
+"category":"Anniversary",
+"price":1299,
+"image":"images/products/004.jpg"
+},
+{
+"id":5,
+"name":"Corporate Executive Set",
+"category":"Corporate",
+"price":1999,
+"image":"images/products/005.jpg"
+}
+]
