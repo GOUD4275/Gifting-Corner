@@ -277,7 +277,8 @@ header{
 }
 
 .italic-text{
-    color:red !important;
+    color:#4a3520 !important;
     font-style: italic !important;
+    font-weight: 600 !important;
 }
 
