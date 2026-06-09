@@ -274,10 +274,9 @@ header{
     color:#9c7630 !important;
 }
 
-
 .italic-text{
     color:#4a3520 !important;
-    display:inline-block;
-    transform: skew(-8deg);
+    font-style: italic;
+    font-weight: 600;
 }
 
