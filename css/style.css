@@ -269,3 +269,11 @@ header{
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+.gold-text{
+    color: #9c7630;
+}
+
+.dark-text{
+    color: #6b4f2a;
+}
