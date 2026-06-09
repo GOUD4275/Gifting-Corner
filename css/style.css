@@ -227,3 +227,45 @@ header{
 }
 
 }
+
+.hero{
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-logo{
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: url("../images/logo.png") no-repeat center;
+    background-size: contain;
+
+    opacity: 0.05;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 0;
+
+    animation: spinLogo 40s linear infinite;
+}
+
+.hero h2,
+.hero p,
+.hero a,
+.hero input{
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes spinLogo{
+    from{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
