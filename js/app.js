@@ -38,6 +38,14 @@ function displayProducts(products){
 
                 <p class="price">₹${product.price}</p>
 
+
+                <button
+                class="wishlist-btn"
+                onclick="addToWishlist(${product.id})">
+                ❤️ Wishlist
+                </button>
+
+
                 <button
                 class="cart-btn"
                 onclick="addToCart(${product.id})">

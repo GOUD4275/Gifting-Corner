@@ -1,0 +1,17 @@
+let wishlist =
+JSON.parse(localStorage.getItem("wishlist")) || [];
+
+function addToWishlist(id){
+
+    const product =
+    allProducts.find(p => p.id === id);
+
+    wishlist.push(product);
+
+    localStorage.setItem(
+        "wishlist",
+        JSON.stringify(wishlist)
+    );
+
+    alert("Added to wishlist!");
+}
