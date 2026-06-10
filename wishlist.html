@@ -1,17 +1,64 @@
-let wishlist =
-JSON.parse(localStorage.getItem("wishlist")) || [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist</title>
+</head>
+<body>
 
-function addToWishlist(id){
+    <h1>❤️ My Wishlist</h1>
 
-    const product =
-    allProducts.find(p => p.id === id);
+    <a href="index.html">← Back to Home</a>
 
-    wishlist.push(product);
+    <hr>
 
-    localStorage.setItem(
-        "wishlist",
-        JSON.stringify(wishlist)
-    );
+    <div id="wishlist-items"></div>
 
-    alert("Added to wishlist!");
-}
+    <script>
+
+    let wishlist =
+    JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    const container =
+    document.getElementById("wishlist-items");
+
+    if(wishlist.length === 0){
+
+        container.innerHTML =
+        "<h2>Your wishlist is empty.</h2>";
+
+    }else{
+
+        wishlist.forEach(product => {
+
+            container.innerHTML += `
+
+            <div style="
+                border:1px solid #ddd;
+                padding:15px;
+                margin:10px;
+            ">
+
+                <img
+                src="${product.image}"
+                width="120">
+
+                <h3>${product.name}</h3>
+
+                <p>${product.category}</p>
+
+                <p>₹${product.price}</p>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+    </script>
+
+</body>
+</html>
