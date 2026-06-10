@@ -3,6 +3,9 @@ let allProducts = [];
 let cart =
 JSON.parse(localStorage.getItem("cart")) || [];
 
+let wishlist =
+JSON.parse(localStorage.getItem("wishlist")) || [];
+
 fetch("data/products.json")
 .then(res => res.json())
 .then(data => {
@@ -38,13 +41,11 @@ function displayProducts(products){
 
                 <p class="price">₹${product.price}</p>
 
-
                 <button
                 class="wishlist-btn"
                 onclick="addToWishlist(${product.id})">
                 ❤️ Wishlist
                 </button>
-
 
                 <button
                 class="cart-btn"
@@ -75,20 +76,36 @@ function addToCart(id){
 
     const product =
     allProducts.find(
-    p => p.id === id
+        p => p.id === id
     );
 
     cart.push(product);
 
     localStorage.setItem(
-    "cart",
-    JSON.stringify(cart)
+        "cart",
+        JSON.stringify(cart)
     );
 
     updateCartCount();
 
     alert(product.name + " added to cart!");
+}
 
+function addToWishlist(id){
+
+    const product =
+    allProducts.find(
+        p => p.id === id
+    );
+
+    wishlist.push(product);
+
+    localStorage.setItem(
+        "wishlist",
+        JSON.stringify(wishlist)
+    );
+
+    alert(product.name + " added to wishlist!");
 }
 
 function updateCartCount(){
@@ -147,26 +164,3 @@ document
     );
 
 });
-
-<script>
-
-let wishlist =
-JSON.parse(localStorage.getItem("wishlist")) || [];
-
-function addToWishlist(id){
-
-    const product =
-    allProducts.find(p => p.id === id);
-
-    wishlist.push(product);
-
-    localStorage.setItem(
-        "wishlist",
-        JSON.stringify(wishlist)
-    );
-
-    alert("Added to wishlist!");
-}
-
-</script>
-
