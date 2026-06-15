@@ -308,12 +308,12 @@ nav a{
     z-index: 1;
 }
 
-@keyframes spinLogo{
-    from{
+@keyframes spinLogo {
+    0% {
         transform: translate(-50%, -50%) rotate(0deg);
     }
-    to{
-        transform: translate(-50%, -50%) rotate(360deg);
+    100% {
+        transform: translate(-50%, -50%) rotate(180deg);
     }
 }
 
