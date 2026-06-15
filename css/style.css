@@ -376,3 +376,35 @@ footer{
 footer p{
     margin: 5px;
 }
+
+/* HERO GIFT IMAGE */
+
+.hero-right img{
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.hero-right{
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p{
+    margin: 5px;
+}
+
+/* ADD HERE */
+
+.hero-right{
+    text-align:center;
+    margin-top:20px;
+}
+
+.hero-right img{
+    width:300px;
+    max-width:100%;
+    height:auto;
+    border-radius:15px;
+}
