@@ -10,157 +10,177 @@ fetch("data/products.json")
 .then(res => res.json())
 .then(data => {
 
-    allProducts = data;
+```
+allProducts = data;
 
-    displayProducts(data);
+displayProducts(data);
 
-    updateCartCount();
+updateCartCount();
+```
 
 });
 
 function displayProducts(products){
 
-    const container =
-    document.getElementById("products");
+```
+const container =
+document.getElementById("products");
 
-    container.innerHTML = "";
+if(!container) return;
 
-    products.forEach(product => {
+container.innerHTML = "";
 
-        container.innerHTML += `
+products.forEach(product => {
 
-        <div class="card">
+    container.innerHTML += `
 
-            <img src="${product.image}" alt="${product.name}">
+    <div class="card">
 
-            <div class="card-content">
+        <img src="${product.image}" alt="${product.name}">
 
-                <h3>${product.name}</h3>
+        <div class="card-content">
 
-                <p>${product.category}</p>
+            <h3>${product.name}</h3>
 
-                <p class="price">₹${product.price}</p>
+            <p>${product.category}</p>
 
-                <button
-                class="wishlist-btn"
-                onclick="addToWishlist(${product.id})">
-                ❤️ Wishlist
-                </button>
+            <p class="price">₹${product.price}</p>
 
-                <button
-                class="cart-btn"
-                onclick="addToCart(${product.id})">
-                🛒 Add To Cart
-                </button>
+            <button onclick="addToWishlist(${product.id})">
+            ❤️ Wishlist
+            </button>
 
-                <br><br>
-
-                <a
-                class="order-btn"
-                target="_blank"
-                href="https://wa.me/919966927212?text=Hi%20I%20want%20to%20order%20${product.name}">
-                Order on WhatsApp
-                </a>
-
-            </div>
+            <button onclick="addToCart(${product.id})">
+            🛒 Add To Cart
+            </button>
 
         </div>
 
-        `;
+    </div>
 
-    });
+    `;
+
+});
+```
 
 }
 
 function addToCart(id){
 
-    const product =
-    allProducts.find(
-        p => p.id === id
-    );
+```
+const product =
+allProducts.find(p => p.id === id);
 
-    cart.push(product);
+const existing =
+cart.find(p => p.id === id);
 
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
+if(existing){
 
-    updateCartCount();
+    existing.qty =
+    (existing.qty || 1) + 1;
 
-    alert(product.name + " added to cart!");
+}else{
+
+    cart.push({
+        ...product,
+        qty:1
+    });
+
+}
+
+localStorage.setItem(
+    "cart",
+    JSON.stringify(cart)
+);
+
+updateCartCount();
+
+alert(product.name + " added to cart!");
+```
+
 }
 
 function addToWishlist(id){
 
-    const product =
-    allProducts.find(
-        p => p.id === id
-    );
+```
+const product =
+allProducts.find(p => p.id === id);
 
-    wishlist.push(product);
+wishlist.push(product);
 
-    localStorage.setItem(
-        "wishlist",
-        JSON.stringify(wishlist)
-    );
+localStorage.setItem(
+    "wishlist",
+    JSON.stringify(wishlist)
+);
 
-    alert(product.name + " added to wishlist!");
+alert(product.name + " added to wishlist!");
+```
+
 }
 
 function updateCartCount(){
 
-    const count =
-    document.getElementById("cart-count");
+```
+const count =
+document.getElementById("cart-count");
 
-    if(count){
+if(count){
 
-        count.innerText =
-        cart.length;
+    count.innerText =
+    cart.reduce((sum,item)=>
+    sum + (item.qty || 1),0);
 
-    }
+}
+```
 
 }
 
 function filterCategory(category){
 
-    if(category === "All"){
+```
+if(category==="All"){
 
-        displayProducts(allProducts);
+    displayProducts(allProducts);
 
-        return;
-
-    }
-
-    displayProducts(
-
-        allProducts.filter(
-
-            p => p.category === category
-
-        )
-
-    );
+    return;
 
 }
 
-document
-.getElementById("search")
-.addEventListener("input", e => {
+displayProducts(
 
-    const value =
-    e.target.value.toLowerCase();
+    allProducts.filter(
 
-    displayProducts(
+        p => p.category === category
 
-        allProducts.filter(product =>
+    )
 
-            product.name
-            .toLowerCase()
-            .includes(value)
+);
+```
 
-        )
+}
 
-    );
+const searchBox =
+document.getElementById("search");
+
+if(searchBox){
+
+searchBox.addEventListener("input", e => {
+
+const value =
+e.target.value.toLowerCase();
+
+displayProducts(
+
+allProducts.filter(product =>
+
+product.name
+.toLowerCase()
+.includes(value)
+
+)
+
+);
 
 });
+
+}
