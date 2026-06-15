@@ -326,3 +326,53 @@ nav a i{
     color:#9c7630;
 
 }
+
+.info-section{
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.info-section h2{
+    color: #9c7630;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.info-section p{
+    color: #555;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.btn{
+    display: inline-block;
+    background: #b8872e;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+}
+
+footer{
+    background: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+footer p{
+    margin: 5px;
+}
