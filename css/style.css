@@ -259,10 +259,25 @@ nav{
   padding:15px;
 }
 
+@media(max-width:768px){
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    font-size:14px;
+    margin:0;
+}
+
+}
+
 .card img{
   height:220px;
 }
-
 }
 
 .bg-logo{
@@ -468,4 +483,14 @@ footer p{
     width:600px;
     margin-left:auto;
     display:block;
+}
+
+@media(max-width:768px){
+
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
 }
