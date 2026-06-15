@@ -434,7 +434,8 @@ footer p{
 
 .hero-right{
     flex:1;
-    text-align:center;
+    text-align:right;
+    padding-right:50px;
 }
 
 .hero-right img{
